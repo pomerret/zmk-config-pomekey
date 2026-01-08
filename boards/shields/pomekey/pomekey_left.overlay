@@ -1,1 +1,7 @@
 #include "pomekey.dtsi"
+
+// ペリフェラル側のリスナー設定
+&peripheral_listener {
+    status = "okay";
+};
+

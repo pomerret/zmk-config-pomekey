@@ -1,6 +1,6 @@
 if SHIELD_POMEKEY_L || SHIELD_POMEKEY_R
     config ZMK_KEYBOARD_NAME
-        default "LisM"
+        default "Pomekey"
 
     config NFCT_PINS_AS_GPIOS
         default y

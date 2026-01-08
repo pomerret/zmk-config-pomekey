@@ -1,9 +1,32 @@
 #include "pomekey.dtsi"
 
-&transform_42keymap {
+&transform_50keymap {
     col-offset = <5>;
 };
 
-&transform_40keymap {
-    col-offset = <5>;
+// エンコーダーを有効化(右側)
+&encoder {
+    status = "okay";
+};
+
+// SPIを有効化してPAW3222を接続
+&spi0 {
+    status = "okay";
+    
+    paw3222: paw3222@0 {
+        compatible = "pixart,paw3222";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        
+        // トラックボールの動作設定
+        paw3222-cpi = <400>;
+        paw3222-run-rate = <1>;
+    };
+};
+
+// セントラル側のリスナー設定
+&central_listener {
+    status = "okay";
+    device = <&paw3222>;
 };
