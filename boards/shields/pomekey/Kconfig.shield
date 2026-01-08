@@ -1,0 +1,6 @@
+# No whitespace after the comma or in your keyboard name!
+config SHIELD_POMEKEY_R
+    def_bool $(shields_list_contains,pomekey_right)
+
+config SHIELD_POMEKEY_L
+    def_bool $(shields_list_contains,pomekey_left)

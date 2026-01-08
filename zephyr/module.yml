@@ -1,3 +1,5 @@
+name: zmk-config-pomekey
 build:
   settings:
     board_root: .
+    # snippet_root: .

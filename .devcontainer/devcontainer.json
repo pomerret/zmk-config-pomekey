@@ -1,0 +1,13 @@
+{
+  "name": "zmk-config-pomekey",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "remoteUser": "root",
+  "workspaceFolder": "/workspaces/zmk-config",
+  "mounts": [
+    "source=pomekey-zmk-root-user,target=/root,type=volume",
+    "source=${localWorkspaceFolder},target=/workspaces/zmk-config,type=bind"
+  ],
+  "postCreateCommand": "bash .devcontainer/setup-west.sh"
+}

@@ -1,0 +1,12 @@
+file_format: "1"
+id: pomekey
+name: LisM
+type: shield
+url: https://github.com/4mplelab/zmk-config-LisM
+requires: [seeeduino_xiao_ble]
+siblings:
+  - pomekey_left
+  - pomekey_right
+features:
+  - keys
+  - pointer
