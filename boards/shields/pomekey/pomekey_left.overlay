@@ -30,5 +30,6 @@
 
 // ペリフェラル側のセンサーをスプリットトランスポートに紐付け
 &trackball_split {
+    status = "okay";
     device = <&paw3222>;
 };
