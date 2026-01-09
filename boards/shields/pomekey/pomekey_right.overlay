@@ -1,9 +1,5 @@
 #include "pomekey.dtsi"
 
-&transform_50keymap {
-    // セントラル(右)が0-5、ペリフェラル(左)が6-11を報告するため、Transform側で調整済み
-};
-
 &kscan0 {
     interrupt-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // gpio_interrupt: P0.03
     gpios
