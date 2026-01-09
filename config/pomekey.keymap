@@ -16,6 +16,33 @@
 };
 
 / {
+    macros {
+        emoji: emoji_macro {
+            compatible = "zmk,behavior-macro";
+            label = "EMOJI";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press &kp CAPSLOCK>,
+                <&macro_tap &kp E>,
+                <&macro_release &kp CAPSLOCK>;
+        };
+    };
+
+    behaviors {
+        encoder_msc: sensor_rotate_msc {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&msc>, <&msc>;
+            tap-ms = <20>;
+        };
+
+        encoder_kp: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
