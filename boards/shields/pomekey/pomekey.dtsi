@@ -99,6 +99,7 @@
 
     kscan0: kscan0 {
         compatible = "zmk,kscan-gpio-charlieplex";
+        status = "okay";
         wakeup-source;
     };
 
