@@ -1,7 +1,7 @@
 #include "pomekey.dtsi"
 
 &transform_50keymap {
-    col-offset = <6>;
+    // セントラル(右)が0-5、ペリフェラル(左)が6-11を報告するため、Transform側で調整済み
 };
 
 &kscan0 {
