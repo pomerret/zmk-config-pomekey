@@ -16,33 +16,6 @@
 };
 
 / {
-    macros {
-        emoji: emoji_macro {
-            compatible = "zmk,behavior-macro";
-            label = "EMOJI";
-            #binding-cells = <0>;
-            bindings = 
-                <&macro_press &kp CAPSLOCK>,
-                <&macro_tap &kp E>,
-                <&macro_release &kp CAPSLOCK>;
-        };
-    };
-
-    behaviors {
-        encoder_msc: sensor_rotate_msc {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
-            tap-ms = <20>;
-        };
-
-        encoder_kp: sensor_rotate_kp {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            #sensor-binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -52,37 +25,37 @@
 &kp Q      &kp W      &kp E      &kp R      &kp T      &kp Y        &kp U      &kp I      &kp O      &kp P      &kp LBKT   &kp RBKT
 &kp A      &kp S      &kp D      &kp F      &kp G      &kp H        &kp J      &kp K      &kp L      &kp SEMI   &kp SQT    &kp BSLH
 &kp Z      &kp X      &kp C      &kp V      &kp B      &kp N        &kp M      &kp COMMA  &kp DOT    &kp SLASH  &kp UP     &kp RET
-&kp LCTRL  &kp LGUI   &kp LALT   &kp LSHIFT &lt 1 SPACE &lt 2 TAB    &kp BSPC   &kp RET    &kp DEL    &kp ESC    &kp LEFT   &kp RIGHT
-&lt 3 ESC                                                                                                     &kp DOWN
+&kp LCTRL  &kp LSHIFT &none      &none      &lt 1 SPACE &lt 2 TAB    &lt 3 BSPC &kp LALT   &none      &none      &kp LEFT   &kp RIGHT
+&none                                                                                                           &none
             >;
 
             sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
         };
 
-        mouse_layer {
+        lower_layer {
+            display-name = "Number";
+            bindings = <
+&kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &kp F6       &kp F7     &kp F8     &kp F9     &kp F10    &kp F11    &kp F12
+&kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6       &kp N7     &kp N8     &kp N9     &kp N0     &kp ESC    &kp DEL
+&trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &kp PG_UP  &kp DOWN
+&trans     &kp LGUI   &none      &none      &trans     &trans       &kp DEL    &trans     &none      &none      &kp HOME   &kp END
+&none                                                                                                           &none
+            >;
+            
+            sensor-bindings = <&encoder_kp C_VOL_DN C_VOL_UP>;
+        };
+
+        raise_layer {
             display-name = "Mouse";
             bindings = <
 &trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans     &trans
 &trans     &trans     &trans     &trans     &trans     &trans       &trans     &mkp MB1   &mkp MB2   &trans     &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans     &trans
-&trans                                                                                                           &trans
+&trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &kp PG_DN  &trans
+&trans     &trans     &none      &none      &trans     &trans       &trans     &trans     &none      &none      &trans     &trans
+&none                                                                                                           &none
             >;
-            
+
             sensor-bindings = <&encoder_msc SCRL_LEFT SCRL_RIGHT>;
-        };
-
-        number_layer {
-            display-name = "Number";
-            bindings = <
-&kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &kp F6       &kp F7     &kp F8     &kp F9     &kp F10    &kp F11    &kp F12
-&kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6       &kp N7     &kp N8     &kp N9     &kp N0     &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans     &trans
-&trans                                                                                                           &trans
-            >;
-
-            sensor-bindings = <&encoder_kp C_VOL_DN C_VOL_UP>;
         };
 
         config_layer {
@@ -91,8 +64,8 @@
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &trans     &trans     &trans     &trans     &trans     &bootloader
 &trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans     &sys_reset
 &trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans     &trans
-&trans     &trans     &trans     &trans     &trans     &trans       &trans     &trans     &trans     &trans     &trans     &trans
-&trans                                                                                                           &trans
+&trans     &trans     &none      &none      &trans     &trans       &trans     &trans     &none      &none      &trans     &trans
+&none                                                                                                           &none
             >;
         };
     };
