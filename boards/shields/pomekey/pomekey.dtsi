@@ -24,7 +24,7 @@
         triggers-per-rotation = <24>;
     };
 
-    transform_map: transform_map {
+    default_transform: keymap_transform0 {
         compatible = "zmk,matrix-transform";
         columns = <10>;
         rows = <5>; 
