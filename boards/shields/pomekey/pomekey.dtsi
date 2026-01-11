@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <dt-bindings/zmk/input_transform.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 #include <physical_layouts.dtsi>
 #include "pomekey_layouts.dtsi"
 
@@ -62,6 +63,18 @@
     central_listener: central_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
+    };
+
+    zip_xy_to_scroll_mapper: zip_xy_to_scroll_mapper {
+        compatible = "zmk,input-processor-xy-to-scroll-mapper";
+        #input-processor-cells = <0>;
+    };
+
+    zip_scroll_scaler: zip_scroll_scaler {
+        compatible = "zmk,input-processor-scaler";
+        #input-processor-cells = <2>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
     };
 };
 
