@@ -1,6 +1,6 @@
 #include "pomekey.dtsi"
 
-&transform_map {
+&default_transform {
     col-offset = <5>;
 };
 
