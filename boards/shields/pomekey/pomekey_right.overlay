@@ -1,5 +1,9 @@
 #include "pomekey.dtsi"
 
+&default_transform {
+    col-offset = <5>;
+};
+
 &kscan0 {
     interrupt-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // gpio_interrupt: P0.03
     gpios
