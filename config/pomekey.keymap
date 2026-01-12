@@ -52,7 +52,7 @@
 &kp Q      &kp W      &kp E      &kp R      &kp T       &none        &none        &kp Y      &kp U      &kp I      &kp O      &kp P
 &kp A      &kp S      &kp D      &kp F      &kp G       &kp LALT      &kp RALT      &kp H      &kp J      &kp K      &kp L      &kp BSLH
 &kp Z      &kp X      &kp C      &kp V      &kp B       &kp LALT      &kp RALT      &kp N      &kp M      &kp COMMA  &kp DOT    &kp SLASH
-&kp LCTRL  &kp LSHIFT &none      &none      &lt 1 SPACE &lt 2 TAB    &lt 3 BSPC   &kp LALT   &none      &none      &kp RCTRL  &kp RLEFT
+&kp LCTRL  &kp LSHIFT &none      &none      &lt 1 SPACE &lt 2 TAB    &lt 3 BSPC   &kp LALT   &none      &none      &kp RCTRL  &kp RIGHT
 &none                                                                                                           &none
             >;
 
@@ -79,6 +79,17 @@
 &none      &none        &none        &none        &none        &none        &bt BT_SEL 4 &none      &none        &none        &none        &bootloader
 &none      &none        &none        &none        &none        &none        &none      &none      &none        &none        &none        &sys_reset
 &none      &none        &none        &none        &none        &none        &none      &none      &none        &none        &none        &none
+&none                                                                                                           &none
+            >;
+        };
+
+        layer_3 {
+            display-name = "Mouse";
+            bindings = <
+&trans     &trans       &trans       &trans       &trans       &none        &none      &trans     &trans       &trans       &trans       &trans
+&trans     &trans       &trans       &trans       &trans       &trans       &trans     &trans     &trans       &trans       &trans       &trans
+&trans     &trans       &trans       &trans       &trans       &trans       &trans     &trans     &trans       &trans       &trans       &trans
+&trans     &trans       &trans       &trans       &trans       &trans       &trans     &trans     &trans       &trans       &trans       &trans
 &none                                                                                                           &none
             >;
         };
