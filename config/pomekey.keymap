@@ -59,7 +59,7 @@
             sensor-bindings = <&encoder_msc SCRL_DOWN SCRL_UP>;
         };
 
-        lower_layer {
+        layer_1 {
             display-name = "Number";
             bindings = <
 &kp F1     &kp F2     &kp F3     &kp F4     &kp F5     &none        &none      &kp F6     &kp F7     &kp F8     &kp LBKT   &kp RBKT
@@ -72,7 +72,7 @@
             sensor-bindings = <&encoder_kp C_VOL_DN C_VOL_UP>;
         };
 
-        config_layer {
+        layer_2 {
             display-name = "Config";
             bindings = <
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none        &none      &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
@@ -83,7 +83,7 @@
             >;
         };
 
-        raise_layer {
+        layer_3 {
             display-name = "Mouse";
             bindings = <
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none        &none      &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
