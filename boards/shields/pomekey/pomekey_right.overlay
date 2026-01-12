@@ -1,5 +1,9 @@
 #include "pomekey.dtsi"
 
+&default_transform {
+    col-offset = <5>;
+};
+
 &kscan0 {
     interrupt-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; // gpio_interrupt: P0.03
     gpios
@@ -28,23 +32,23 @@
     };
 };
 
-// セントラル側のリスナー設定
-&central_listener {
-    status = "okay";
-    device = <&paw3222_right>;
+// // セントラル側のリスナー設定
+// &central_listener {
+//     status = "okay";
+//     device = <&paw3222_right>;
     
-    // 必要に応じてXYZの入れ替えや反転を設定
-    // input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
+//     // 必要に応じてXYZの入れ替えや反転を設定
+//     // input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
 
-    scroller {
-        layers = <2>; // レイヤー2でスクロールモード
-        input-processors = 
-            <&zip_xy_to_scroll_mapper>,
-            <&zip_scroll_scaler 1 16>;
-    };
-};
+//     scroller {
+//         layers = <2>; // レイヤー2でスクロールモード
+//         input-processors = 
+//             <&zip_xy_to_scroll_mapper>,
+//             <&zip_scroll_scaler 1 16>;
+//     };
+// };
 
-// ペリフェラル側のセンサーを受信するリスナーを有効化
-&peripheral_listener {
-    status = "okay";
-};
+// // ペリフェラル側のセンサーを受信するリスナーを有効化
+// &peripheral_listener {
+//     status = "okay";
+// };

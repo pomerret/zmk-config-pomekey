@@ -4,9 +4,9 @@ name: Pomekey
 type: shield
 url: https://github.com/pomerret/zmk-config-pomekey
 requires: [seeeduino_xiao_ble]
-siblings:
-  - pomekey_left
-  - pomekey_right
 features:
   - keys
   - pointer
+siblings:
+  - pomekey_left
+  - pomekey_right
