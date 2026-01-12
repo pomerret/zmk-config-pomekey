@@ -28,8 +28,27 @@
     };
 };
 
-// // ペリフェラル側のセンサーをスプリットトランスポートに紐付け
-// &trackball_split {
-//     status = "okay";
-//     device = <&paw3222>;
-// };
+// 自身のセンサー(左側)をリスナーに登録
+&central_listener {
+    status = "okay";
+    device = <&paw3222>;
+    
+    scroller {
+        layers = <2>; // レイヤー2でスクロールモード
+        input-processors = 
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_scroll_scaler 1 16>;
+    };
+};
+
+// ペリフェラル(右側)からの入力を受け取るリスナーを有効化
+&peripheral_listener {
+    status = "okay";
+    
+    scroller {
+        layers = <2>; // レイヤー2でスクロールモード
+        input-processors = 
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_scroll_scaler 1 16>;
+    };
+};
