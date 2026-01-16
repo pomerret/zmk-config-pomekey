@@ -31,7 +31,7 @@
     status = "okay";
     device = <&trackball>;
 };
-};
+
 
 // ペリフェラル(右側)からの入力を受け取るリスナーを有効化
 &peripheral_listener {
