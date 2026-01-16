@@ -24,16 +24,14 @@
 
 &spi0 {
     status = "okay";
-    paw3222_right: paw3222@0 {
-        compatible = "pixart,paw3222";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&xiao_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // MOTION: P0.02
-    };
+};
+
+&trackball {
+    status = "okay";
 };
 
 // ペリフェラル側のセンサーをスプリット転送用ノードに紐付け
 &trackball_split {
     status = "okay";
-    device = <&paw3222_right>;
+    device = <&trackball>;
 };

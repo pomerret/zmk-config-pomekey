@@ -20,20 +20,17 @@
 
 &spi0 {
     status = "okay";
-    paw3222: paw3222@0 {
-        compatible = "pixart,paw3222";
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&xiao_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; // MOTION: P0.02
-    };
+};
+
+&trackball {
+    status = "okay";
 };
 
 // 自身のセンサー(左側)をリスナーに登録
 &central_listener {
     status = "okay";
-    device = <&paw3222>;
-    
-
+    device = <&trackball>;
+};
 };
 
 // ペリフェラル(右側)からの入力を受け取るリスナーを有効化
