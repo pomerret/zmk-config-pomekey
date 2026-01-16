@@ -102,7 +102,7 @@
         compatible = "pixart,paw3222";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
+        irq-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
     };
 };
 
