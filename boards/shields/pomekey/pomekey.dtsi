@@ -69,6 +69,13 @@
     };
 
 
+    /* 充電ステータス */
+    chg_stat: chg_stat {
+        compatible = "custom,chg-stat";
+        gpios = <&gpio0 17 GPIO_ACTIVE_LOW>; /* Low=充電中 */
+        status = "okay";
+    };
+
 };
 
 &pinctrl {
@@ -102,7 +109,7 @@
         compatible = "pixart,paw3222";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
+        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
 };
 

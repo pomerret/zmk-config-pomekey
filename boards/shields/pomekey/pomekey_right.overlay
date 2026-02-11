@@ -30,6 +30,15 @@
     status = "okay";
 };
 
+// 自身のセンサー(右側)をリスナーに登録
+/ {
+    trackball_peripheral_listener: trackball_peripheral_listener {
+        compatible = "zmk,input-listener";
+        status = "okay";
+        device = <&trackball>;
+    };
+};
+
 // ペリフェラル側のセンサーをスプリット転送用ノードに紐付け
 &trackball_split {
     status = "okay";

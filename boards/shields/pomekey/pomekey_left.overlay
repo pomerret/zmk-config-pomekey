@@ -32,10 +32,11 @@
     device = <&trackball>;
 };
 
-
 // ペリフェラル(右側)からの入力を受け取るリスナーを有効化
+&trackball_split {
+    status = "okay";
+};
+
 &peripheral_listener {
     status = "okay";
-    
-
 };
