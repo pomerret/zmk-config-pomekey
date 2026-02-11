@@ -4,6 +4,10 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+    - name: 4mplelab
+      url-base: https://github.com/4mplelab
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -11,6 +15,12 @@ manifest:
       import: app/west.yml
     - name: zmk-driver-paw3222
       remote: sekigon-gonnoc
+      revision: main
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: main
+    - name: zmk-feature-charge-indicator
+      remote: 4mplelab
       revision: main
   self:
     path: config
