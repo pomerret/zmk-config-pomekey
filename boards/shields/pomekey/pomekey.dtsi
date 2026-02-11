@@ -107,7 +107,6 @@
 };
 
 &vbatt {
-    status = "disabled";
     output-ohms = <503000>;
     full-ohms = <(1000000 + 503000)>;
 };
